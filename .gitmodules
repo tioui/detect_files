@@ -1,0 +1,6 @@
+[submodule "PostageApp-Eiffel"]
+	path = PostageApp-Eiffel
+	url = https://github.com/tioui/PostageApp-Eiffel.git
+[submodule "Eiffel_Tray_Icon"]
+	path = Eiffel_Tray_Icon
+	url = https://github.com/tioui/Eiffel_Tray_Icon.git
