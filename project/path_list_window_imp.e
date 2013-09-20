@@ -47,9 +47,9 @@ feature {NONE}-- Initialization
 			button_container.extend (l_ev_cell_2)
 			button_container.extend (quit_button)
 
-			string_constant_set_procedures.extend (agent file_menu.set_text (?))
-			string_constant_retrieval_functions.extend (agent file_menu_text)
-			quit_menu_item.set_text ("&Quit")
+			file_menu.set_text ("&File")
+			string_constant_set_procedures.extend (agent quit_menu_item.set_text (?))
+			string_constant_retrieval_functions.extend (agent quit_menu_item_text)
 			main_container.set_minimum_width (700)
 			integer_constant_set_procedures.extend (agent main_container.set_minimum_height (?))
 			integer_constant_retrieval_functions.extend (agent main_container_minimum_height)
@@ -59,10 +59,14 @@ feature {NONE}-- Initialization
 			button_container.disable_item_expand (add_button)
 			button_container.disable_item_expand (start_stop_button)
 			button_container.disable_item_expand (quit_button)
-			add_button.set_text ("New Path")
-			start_stop_button.set_text ("Start")
-			quit_button.set_text ("Quit")
-			set_title ("Path List")
+			string_constant_set_procedures.extend (agent add_button.set_text (?))
+			string_constant_retrieval_functions.extend (agent add_button_text)
+			string_constant_set_procedures.extend (agent start_stop_button.set_text (?))
+			string_constant_retrieval_functions.extend (agent start_button_text)
+			string_constant_set_procedures.extend (agent quit_button.set_text (?))
+			string_constant_retrieval_functions.extend (agent quit_button_text)
+			string_constant_set_procedures.extend (agent set_title (?))
+			string_constant_retrieval_functions.extend (agent path_list_window_title)
 
 			set_all_attributes_using_constants
 

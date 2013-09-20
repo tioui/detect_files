@@ -65,129 +65,25 @@
    <Name>quit_confirmation_text</Name>
    <Value>Quitting the program?</Value>
   </Constant>
- </item>
- <item type="EV_HORIZONTAL_BOX">
-  <Internal_properties>
-   <id>15</id>
-   <name>path_info_widget</name>
-   <Expanded>1</Expanded>
-  </Internal_properties>
-  <EV_COLORIZABLE>
-  </EV_COLORIZABLE>
-  <EV_SENSITIVE>
-  </EV_SENSITIVE>
-  <EV_WIDGET>
-  </EV_WIDGET>
-  <EV_BOX>
-   <Is_item_expanded>1100</Is_item_expanded>
-  </EV_BOX>
-  <EV_PIXMAPABLE>
-  </EV_PIXMAPABLE>
-  <EV_CONTAINER>
-  </EV_CONTAINER>
-  <item type="EV_CHECK_BUTTON">
-   <Internal_properties>
-    <id>16</id>
-    <name>path_name_check_button</name>
-    <Expanded>0</Expanded>
-   </Internal_properties>
-   <EV_COLORIZABLE>
-   </EV_COLORIZABLE>
-   <EV_FONTABLE>
-   </EV_FONTABLE>
-   <EV_DESELECTABLE>
-   </EV_DESELECTABLE>
-   <EV_SENSITIVE>
-   </EV_SENSITIVE>
-   <EV_TEXTABLE>
-   </EV_TEXTABLE>
-   <EV_TOOLTIPABLE>
-    <Tooltip>
-     <Constant>active_check_button_tooltip</Constant>
-    </Tooltip>
-   </EV_TOOLTIPABLE>
-   <EV_WIDGET>
-   </EV_WIDGET>
-   <EV_TEXT_ALIGNABLE>
-   </EV_TEXT_ALIGNABLE>
-   <EV_PIXMAPABLE>
-   </EV_PIXMAPABLE>
-  </item>
-  <item type="EV_CELL">
-   <Internal_properties>
-    <id>17</id>
-    <Expanded>0</Expanded>
-   </Internal_properties>
-   <EV_COLORIZABLE>
-   </EV_COLORIZABLE>
-   <EV_SENSITIVE>
-   </EV_SENSITIVE>
-   <EV_WIDGET>
-    <Minimum_width>50</Minimum_width>
-   </EV_WIDGET>
-   <EV_PIXMAPABLE>
-   </EV_PIXMAPABLE>
-   <EV_CONTAINER>
-   </EV_CONTAINER>
-  </item>
-  <item type="EV_BUTTON">
-   <Internal_properties>
-    <id>18</id>
-    <name>modify_path_button</name>
-    <Expanded>0</Expanded>
-   </Internal_properties>
-   <EV_COLORIZABLE>
-   </EV_COLORIZABLE>
-   <EV_FONTABLE>
-   </EV_FONTABLE>
-   <EV_SENSITIVE>
-   </EV_SENSITIVE>
-   <EV_TEXTABLE>
-    <Text>Modify</Text>
-   </EV_TEXTABLE>
-   <EV_TOOLTIPABLE>
-   </EV_TOOLTIPABLE>
-   <EV_WIDGET>
-   </EV_WIDGET>
-   <EV_TEXT_ALIGNABLE>
-   </EV_TEXT_ALIGNABLE>
-   <EV_PIXMAPABLE>
-   </EV_PIXMAPABLE>
-   <Events>
-    <Event>select_actions EV_BUTTON_ACTION_SEQUENCES modify_button_pressed</Event>
-   </Events>
-  </item>
-  <item type="EV_BUTTON">
-   <Internal_properties>
-    <id>19</id>
-    <name>delete_button</name>
-    <Expanded>0</Expanded>
-   </Internal_properties>
-   <EV_COLORIZABLE>
-   </EV_COLORIZABLE>
-   <EV_FONTABLE>
-   </EV_FONTABLE>
-   <EV_SENSITIVE>
-   </EV_SENSITIVE>
-   <EV_TEXTABLE>
-    <Text>Delete</Text>
-   </EV_TEXTABLE>
-   <EV_TOOLTIPABLE>
-   </EV_TOOLTIPABLE>
-   <EV_WIDGET>
-   </EV_WIDGET>
-   <EV_TEXT_ALIGNABLE>
-   </EV_TEXT_ALIGNABLE>
-   <EV_PIXMAPABLE>
-   </EV_PIXMAPABLE>
-   <Events>
-    <Event>select_actions EV_BUTTON_ACTION_SEQUENCES delete_button_pressed</Event>
-   </Events>
-  </item>
+  <Constant>
+   <type>STRING</type>
+   <Name>is_running_text</Name>
+   <Value>Running...</Value>
+  </Constant>
+  <Constant>
+   <type>STRING</type>
+   <Name>is_waiting_text</Name>
+   <Value>Waiting...</Value>
+  </Constant>
+  <Constant>
+   <type>STRING</type>
+   <Name>application_icon_file_name</Name>
+   <Value>app.ico</Value>
+  </Constant>
  </item>
  <item type="EV_TITLED_WINDOW">
   <Internal_properties>
-   <id>1</id>
+   <id>6</id>
    <name>path_list_window</name>
    <Expanded>1</Expanded>
    <Is_root_window>True</Is_root_window>
@@ -199,7 +95,9 @@
   <EV_WIDGET>
   </EV_WIDGET>
   <EV_WINDOW>
-   <Title>Path List</Title>
+   <Title>
+    <Constant>path_list_window_title</Constant>
+   </Title>
   </EV_WINDOW>
   <EV_PIXMAPABLE>
   </EV_PIXMAPABLE>
@@ -207,35 +105,35 @@
   </EV_CONTAINER>
   <item type="EV_MENU_BAR">
    <Internal_properties>
-    <id>4</id>
+    <id>9</id>
     <name>main_menu_bar</name>
     <Expanded>1</Expanded>
    </Internal_properties>
    <item type="EV_MENU">
     <Internal_properties>
-     <id>3</id>
+     <id>8</id>
      <name>file_menu</name>
      <Expanded>1</Expanded>
     </Internal_properties>
     <EV_SENSITIVE>
     </EV_SENSITIVE>
     <EV_TEXTABLE>
-     <Text>
-      <Constant>file_menu_text</Constant>
-     </Text>
+     <Text>&amp;File</Text>
     </EV_TEXTABLE>
     <EV_PIXMAPABLE>
     </EV_PIXMAPABLE>
     <item type="EV_MENU_ITEM">
      <Internal_properties>
-      <id>2</id>
+      <id>7</id>
       <name>quit_menu_item</name>
       <Expanded>0</Expanded>
      </Internal_properties>
      <EV_SENSITIVE>
      </EV_SENSITIVE>
      <EV_TEXTABLE>
-      <Text>&amp;Quit</Text>
+      <Text>
+       <Constant>quit_menu_item_text</Constant>
+      </Text>
      </EV_TEXTABLE>
      <EV_PIXMAPABLE>
      </EV_PIXMAPABLE>
@@ -247,7 +145,7 @@
   </item>
   <item type="EV_VERTICAL_BOX">
    <Internal_properties>
-    <id>14</id>
+    <id>18</id>
     <name>main_container</name>
     <Expanded>1</Expanded>
    </Internal_properties>
@@ -270,7 +168,7 @@
    </EV_CONTAINER>
    <item type="EV_SCROLLABLE_AREA">
     <Internal_properties>
-     <id>6</id>
+     <id>11</id>
      <Expanded>1</Expanded>
     </Internal_properties>
     <EV_COLORIZABLE>
@@ -291,7 +189,7 @@
     </EV_CONTAINER>
     <item type="EV_VERTICAL_BOX">
      <Internal_properties>
-      <id>5</id>
+      <id>10</id>
       <name>path_info_list_container</name>
       <Expanded>0</Expanded>
      </Internal_properties>
@@ -311,7 +209,7 @@
    </item>
    <item type="EV_HORIZONTAL_BOX">
     <Internal_properties>
-     <id>13</id>
+     <id>17</id>
      <name>button_container</name>
      <Expanded>1</Expanded>
     </Internal_properties>
@@ -330,7 +228,7 @@
     </EV_CONTAINER>
     <item type="EV_BUTTON">
      <Internal_properties>
-      <id>7</id>
+      <id>12</id>
       <name>add_button</name>
       <Expanded>0</Expanded>
      </Internal_properties>
@@ -341,7 +239,9 @@
      <EV_SENSITIVE>
      </EV_SENSITIVE>
      <EV_TEXTABLE>
-      <Text>New Path</Text>
+      <Text>
+       <Constant>add_button_text</Constant>
+      </Text>
      </EV_TEXTABLE>
      <EV_TOOLTIPABLE>
      </EV_TOOLTIPABLE>
@@ -357,7 +257,7 @@
     </item>
     <item type="EV_CELL">
      <Internal_properties>
-      <id>8</id>
+      <id>13</id>
       <Expanded>0</Expanded>
      </Internal_properties>
      <EV_COLORIZABLE>
@@ -373,7 +273,7 @@
     </item>
     <item type="EV_BUTTON">
      <Internal_properties>
-      <id>9</id>
+      <id>14</id>
       <name>start_stop_button</name>
       <Expanded>0</Expanded>
      </Internal_properties>
@@ -384,7 +284,9 @@
      <EV_SENSITIVE>
      </EV_SENSITIVE>
      <EV_TEXTABLE>
-      <Text>Start</Text>
+      <Text>
+       <Constant>start_button_text</Constant>
+      </Text>
      </EV_TEXTABLE>
      <EV_TOOLTIPABLE>
      </EV_TOOLTIPABLE>
@@ -400,7 +302,7 @@
     </item>
     <item type="EV_CELL">
      <Internal_properties>
-      <id>11</id>
+      <id>15</id>
       <Expanded>0</Expanded>
      </Internal_properties>
      <EV_COLORIZABLE>
@@ -416,7 +318,7 @@
     </item>
     <item type="EV_BUTTON">
      <Internal_properties>
-      <id>12</id>
+      <id>16</id>
       <name>quit_button</name>
       <Expanded>0</Expanded>
      </Internal_properties>
@@ -427,7 +329,9 @@
      <EV_SENSITIVE>
      </EV_SENSITIVE>
      <EV_TEXTABLE>
-      <Text>Quit</Text>
+      <Text>
+       <Constant>quit_button_text</Constant>
+      </Text>
      </EV_TEXTABLE>
      <EV_TOOLTIPABLE>
      </EV_TOOLTIPABLE>
@@ -442,6 +346,127 @@
      </Events>
     </item>
    </item>
+  </item>
+ </item>
+ <item type="EV_HORIZONTAL_BOX">
+  <Internal_properties>
+   <id>1</id>
+   <name>path_info_widget</name>
+   <Expanded>1</Expanded>
+  </Internal_properties>
+  <EV_COLORIZABLE>
+  </EV_COLORIZABLE>
+  <EV_SENSITIVE>
+  </EV_SENSITIVE>
+  <EV_WIDGET>
+  </EV_WIDGET>
+  <EV_BOX>
+   <Is_item_expanded>1100</Is_item_expanded>
+  </EV_BOX>
+  <EV_PIXMAPABLE>
+  </EV_PIXMAPABLE>
+  <EV_CONTAINER>
+  </EV_CONTAINER>
+  <item type="EV_CHECK_BUTTON">
+   <Internal_properties>
+    <id>2</id>
+    <name>path_name_check_button</name>
+    <Expanded>0</Expanded>
+   </Internal_properties>
+   <EV_COLORIZABLE>
+   </EV_COLORIZABLE>
+   <EV_FONTABLE>
+   </EV_FONTABLE>
+   <EV_DESELECTABLE>
+   </EV_DESELECTABLE>
+   <EV_SENSITIVE>
+   </EV_SENSITIVE>
+   <EV_TEXTABLE>
+   </EV_TEXTABLE>
+   <EV_TOOLTIPABLE>
+    <Tooltip>Active?</Tooltip>
+   </EV_TOOLTIPABLE>
+   <EV_WIDGET>
+   </EV_WIDGET>
+   <EV_TEXT_ALIGNABLE>
+   </EV_TEXT_ALIGNABLE>
+   <EV_PIXMAPABLE>
+   </EV_PIXMAPABLE>
+  </item>
+  <item type="EV_CELL">
+   <Internal_properties>
+    <id>3</id>
+    <Expanded>0</Expanded>
+   </Internal_properties>
+   <EV_COLORIZABLE>
+   </EV_COLORIZABLE>
+   <EV_SENSITIVE>
+   </EV_SENSITIVE>
+   <EV_WIDGET>
+    <Minimum_width>50</Minimum_width>
+   </EV_WIDGET>
+   <EV_PIXMAPABLE>
+   </EV_PIXMAPABLE>
+   <EV_CONTAINER>
+   </EV_CONTAINER>
+  </item>
+  <item type="EV_BUTTON">
+   <Internal_properties>
+    <id>4</id>
+    <name>modify_path_button</name>
+    <Expanded>0</Expanded>
+   </Internal_properties>
+   <EV_COLORIZABLE>
+   </EV_COLORIZABLE>
+   <EV_FONTABLE>
+   </EV_FONTABLE>
+   <EV_SENSITIVE>
+   </EV_SENSITIVE>
+   <EV_TEXTABLE>
+    <Text>
+     <Constant>modify_button_text</Constant>
+    </Text>
+   </EV_TEXTABLE>
+   <EV_TOOLTIPABLE>
+   </EV_TOOLTIPABLE>
+   <EV_WIDGET>
+   </EV_WIDGET>
+   <EV_TEXT_ALIGNABLE>
+   </EV_TEXT_ALIGNABLE>
+   <EV_PIXMAPABLE>
+   </EV_PIXMAPABLE>
+   <Events>
+    <Event>select_actions EV_BUTTON_ACTION_SEQUENCES modify_button_pressed</Event>
+   </Events>
+  </item>
+  <item type="EV_BUTTON">
+   <Internal_properties>
+    <id>5</id>
+    <name>delete_button</name>
+    <Expanded>0</Expanded>
+   </Internal_properties>
+   <EV_COLORIZABLE>
+   </EV_COLORIZABLE>
+   <EV_FONTABLE>
+   </EV_FONTABLE>
+   <EV_SENSITIVE>
+   </EV_SENSITIVE>
+   <EV_TEXTABLE>
+    <Text>
+     <Constant>delete_button_text</Constant>
+    </Text>
+   </EV_TEXTABLE>
+   <EV_TOOLTIPABLE>
+   </EV_TOOLTIPABLE>
+   <EV_WIDGET>
+   </EV_WIDGET>
+   <EV_TEXT_ALIGNABLE>
+   </EV_TEXT_ALIGNABLE>
+   <EV_PIXMAPABLE>
+   </EV_PIXMAPABLE>
+   <Events>
+    <Event>select_actions EV_BUTTON_ACTION_SEQUENCES delete_button_pressed</Event>
+   </Events>
   </item>
  </item>
 </application>

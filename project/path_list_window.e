@@ -18,7 +18,8 @@ feature {NONE} -- Initialization
 			-- Create any auxilliary objects needed for PATH_LIST_WINDOW.
 			-- Initialization for these objects must be performed in `user_initialization'.
 		do
-				-- Create attached types defined in class here, initialize them in `user_initialization'.
+			create system_icon.make_from_file ("app.ico")
+			create scanner
 		end
 
 	user_initialization
@@ -28,14 +29,55 @@ feature {NONE} -- Initialization
 				-- Initialize types defined in current class
 				close_request_actions.wipe_out
 				close_request_actions.extend (agent hide)
+				system_icon.activate_action.extend (agent on_system_icon_activate)
+				system_icon.popup_action.extend (agent on_popup)
+				system_icon.set_tooltip (is_waiting_text)
+				system_icon.show
 		end
 
 feature {NONE} -- Implementation
 
+	on_system_icon_activate
+		do
+			if is_displayed then
+				hide
+			else
+				show
+			end
+		end
+
+	on_popup
+			-- Popup menu when right click on the tray icon.
+		local
+			l_x, l_y:INTEGER
+			l_screen:EV_SCREEN
+			l_pointer_position:EV_COORDINATE
+			l_popup:EV_MENU
+			l_quit_menu_item:EV_MENU_ITEM
+			l_env:EXECUTION_ENVIRONMENT
+		do
+			create l_env
+			create l_screen
+			l_pointer_position:=l_screen.pointer_position
+			l_x:=l_pointer_position.x
+			l_y:=l_pointer_position.y
+			create l_popup
+			create l_quit_menu_item.make_with_text_and_action ("Quit", agent quit_button_pressed)
+			l_popup.extend (l_quit_menu_item)
+			if l_popup.height+l_y>l_screen.height-40 then
+				l_y:=l_y-l_popup.height-40
+			end
+			if l_popup.width+l_x>l_screen.width-40 then
+				l_x:=l_x-l_popup.width-40
+			end
+			l_popup.show_at (Void, l_x, l_y)
+			l_env.sleep (100000000)		-- This delay is to be sure that the tray icon mouse button release don't make the popup desapear (on linux)
+		end
+
 	quit_menu_item_pressed
 			-- Called by `select_actions' of `quit_menu_item'.
 		do
-			destroy_and_exit_if_last
+			quit_button_pressed
 		end
 
 	add_button_pressed
@@ -46,11 +88,16 @@ feature {NONE} -- Implementation
 	start_button_pressed
 			-- Called by `select_actions' of `start_button'.
 		do
-		end
+			if scanner.is_running then
+				scanner.stop
+				system_icon.set_tooltip (is_waiting_text)
+				start_stop_button.set_text (start_button_text)
+			else
+				scanner.start
+				system_icon.set_tooltip (is_running_text)
+				start_stop_button.set_text (stop_button_text)
+			end
 
-	stop_button_pressed
-			-- Called by `select_actions' of `stop_button'.
-		do
 		end
 
 	quit_button_pressed
@@ -63,12 +110,21 @@ feature {NONE} -- Implementation
 			l_dialog.show_modal_to_window (Current)
 			if attached l_dialog.selected_button as la_button_text then
 				if la_button_text.as_upper.is_equal ("OK") then
+					system_icon.hide
+					system_icon.destroy
 					destroy_and_exit_if_last
 				end
 			end
 
 		end
 
-	
+
+
+
+	system_icon:TRAY_ICON
+
+	scanner:SCANNING_CONTROLLER
+
+
 
 end

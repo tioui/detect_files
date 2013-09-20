@@ -39,11 +39,12 @@ feature {NONE}-- Initialization
 			extend (modify_path_button)
 			extend (delete_button)
 
-			string_constant_set_procedures.extend (agent path_name_check_button.set_tooltip (?))
-			string_constant_retrieval_functions.extend (agent active_check_button_tooltip)
+			path_name_check_button.set_tooltip ("Active?")
 			l_ev_cell_1.set_minimum_width (50)
-			modify_path_button.set_text ("Modify")
-			delete_button.set_text ("Delete")
+			string_constant_set_procedures.extend (agent modify_path_button.set_text (?))
+			string_constant_retrieval_functions.extend (agent modify_button_text)
+			string_constant_set_procedures.extend (agent delete_button.set_text (?))
+			string_constant_retrieval_functions.extend (agent delete_button_text)
 			disable_item_expand (modify_path_button)
 			disable_item_expand (delete_button)
 

@@ -68,6 +68,22 @@ feature -- Access
 		do
 			initialized_cell.put (False)
 			initialize_constants
+			path_list_window_title_cell.put(string_constant_by_name ("path_list_window_title"))
+			main_container_minimum_width_cell.put(integer_constant_by_name ("main_container_minimum_width"))
+			main_container_minimum_height_cell.put(integer_constant_by_name ("main_container_minimum_height"))
+			file_menu_text_cell.put(string_constant_by_name ("file_menu_text"))
+			quit_menu_item_text_cell.put(string_constant_by_name ("quit_menu_item_text"))
+			add_button_text_cell.put(string_constant_by_name ("add_button_text"))
+			quit_button_text_cell.put(string_constant_by_name ("quit_button_text"))
+			modify_button_text_cell.put(string_constant_by_name ("modify_button_text"))
+			delete_button_text_cell.put(string_constant_by_name ("delete_button_text"))
+			active_check_button_tooltip_cell.put(string_constant_by_name ("active_check_button_tooltip"))
+			start_button_text_cell.put(string_constant_by_name ("start_button_text"))
+			stop_button_text_cell.put(string_constant_by_name ("stop_button_text"))
+			quit_confirmation_text_cell.put(string_constant_by_name ("quit_confirmation_text"))
+			is_running_text_cell.put(string_constant_by_name ("is_running_text"))
+			is_waiting_text_cell.put(string_constant_by_name ("is_waiting_text"))
+			application_icon_file_name_cell.put(string_constant_by_name ("application_icon_file_name"))
 		end
 
 	path_list_window_title: STRING_32
@@ -79,7 +95,7 @@ feature -- Access
 	path_list_window_title_cell: CELL [STRING_32]
 			--`Result' is once access to a cell holding vale of `path_list_window_title'.
 		once
-			create Result.put ("Path List")
+			create Result.put (string_constant_by_name ("path_list_window_title"))
 		end
 
 	main_container_minimum_width: INTEGER
@@ -91,7 +107,7 @@ feature -- Access
 	main_container_minimum_width_cell: CELL [INTEGER]
 			--`Result' is once access to a cell holding vale of `main_container_minimum_width'.
 		once
-			create Result.put (700)
+			create Result.put (integer_constant_by_name ("main_container_minimum_width"))
 		end
 
 	main_container_minimum_height: INTEGER
@@ -103,7 +119,7 @@ feature -- Access
 	main_container_minimum_height_cell: CELL [INTEGER]
 			--`Result' is once access to a cell holding vale of `main_container_minimum_height'.
 		once
-			create Result.put (432)
+			create Result.put (integer_constant_by_name ("main_container_minimum_height"))
 		end
 
 	file_menu_text: STRING_32
@@ -115,7 +131,7 @@ feature -- Access
 	file_menu_text_cell: CELL [STRING_32]
 			--`Result' is once access to a cell holding vale of `file_menu_text'.
 		once
-			create Result.put ("&File")
+			create Result.put (string_constant_by_name ("file_menu_text"))
 		end
 
 	quit_menu_item_text: STRING_32
@@ -127,7 +143,7 @@ feature -- Access
 	quit_menu_item_text_cell: CELL [STRING_32]
 			--`Result' is once access to a cell holding vale of `quit_menu_item_text'.
 		once
-			create Result.put ("&Quit")
+			create Result.put (string_constant_by_name ("quit_menu_item_text"))
 		end
 
 	add_button_text: STRING_32
@@ -139,7 +155,7 @@ feature -- Access
 	add_button_text_cell: CELL [STRING_32]
 			--`Result' is once access to a cell holding vale of `add_button_text'.
 		once
-			create Result.put ("New Path")
+			create Result.put (string_constant_by_name ("add_button_text"))
 		end
 
 	quit_button_text: STRING_32
@@ -151,7 +167,7 @@ feature -- Access
 	quit_button_text_cell: CELL [STRING_32]
 			--`Result' is once access to a cell holding vale of `quit_button_text'.
 		once
-			create Result.put ("Quit")
+			create Result.put (string_constant_by_name ("quit_button_text"))
 		end
 
 	modify_button_text: STRING_32
@@ -163,7 +179,7 @@ feature -- Access
 	modify_button_text_cell: CELL [STRING_32]
 			--`Result' is once access to a cell holding vale of `modify_button_text'.
 		once
-			create Result.put ("Modify")
+			create Result.put (string_constant_by_name ("modify_button_text"))
 		end
 
 	delete_button_text: STRING_32
@@ -175,7 +191,7 @@ feature -- Access
 	delete_button_text_cell: CELL [STRING_32]
 			--`Result' is once access to a cell holding vale of `delete_button_text'.
 		once
-			create Result.put ("Delete")
+			create Result.put (string_constant_by_name ("delete_button_text"))
 		end
 
 	active_check_button_tooltip: STRING_32
@@ -187,7 +203,7 @@ feature -- Access
 	active_check_button_tooltip_cell: CELL [STRING_32]
 			--`Result' is once access to a cell holding vale of `active_check_button_tooltip'.
 		once
-			create Result.put ("Active?")
+			create Result.put (string_constant_by_name ("active_check_button_tooltip"))
 		end
 
 	start_button_text: STRING_32
@@ -199,7 +215,7 @@ feature -- Access
 	start_button_text_cell: CELL [STRING_32]
 			--`Result' is once access to a cell holding vale of `start_button_text'.
 		once
-			create Result.put ("Start")
+			create Result.put (string_constant_by_name ("start_button_text"))
 		end
 
 	stop_button_text: STRING_32
@@ -211,7 +227,7 @@ feature -- Access
 	stop_button_text_cell: CELL [STRING_32]
 			--`Result' is once access to a cell holding vale of `stop_button_text'.
 		once
-			create Result.put ("Stop")
+			create Result.put (string_constant_by_name ("stop_button_text"))
 		end
 
 	quit_confirmation_text: STRING_32
@@ -223,7 +239,43 @@ feature -- Access
 	quit_confirmation_text_cell: CELL [STRING_32]
 			--`Result' is once access to a cell holding vale of `quit_confirmation_text'.
 		once
-			create Result.put ("Quitting the program?")
+			create Result.put (string_constant_by_name ("quit_confirmation_text"))
+		end
+
+	is_running_text: STRING_32
+			-- `Result' is STRING_32 constant named `is_running_text'.
+		do
+			Result := is_running_text_cell.item
+		end
+
+	is_running_text_cell: CELL [STRING_32]
+			--`Result' is once access to a cell holding vale of `is_running_text'.
+		once
+			create Result.put (string_constant_by_name ("is_running_text"))
+		end
+
+	is_waiting_text: STRING_32
+			-- `Result' is STRING_32 constant named `is_waiting_text'.
+		do
+			Result := is_waiting_text_cell.item
+		end
+
+	is_waiting_text_cell: CELL [STRING_32]
+			--`Result' is once access to a cell holding vale of `is_waiting_text'.
+		once
+			create Result.put (string_constant_by_name ("is_waiting_text"))
+		end
+
+	application_icon_file_name: STRING_32
+			-- `Result' is STRING_32 constant named `application_icon_file_name'.
+		do
+			Result := application_icon_file_name_cell.item
+		end
+
+	application_icon_file_name_cell: CELL [STRING_32]
+			--`Result' is once access to a cell holding vale of `application_icon_file_name'.
+		once
+			create Result.put (string_constant_by_name ("application_icon_file_name"))
 		end
 
 feature -- Access
